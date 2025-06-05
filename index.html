@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gpa calculator</title>
+    <link rel="stylesheet" href="styles.css">
+     <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <div id="inner">
+        <h2>GPA Calculator</h2>
+        <details>
+            <summary>How to use</summary>
+            <p>Enter your scores in the format,
+                5,4,3,2,1,4,3,2,1
+                where each number corresponds to a grade as follows:
+                <ul>
+                    <li>A=5</li>
+                    <li>B=4</li>
+                    <li>C=3</li>
+                    <li>D=2</li>
+                    <li>E=1</li>
+                </ul>
+                and units in the respective fields.</p>
+        </details>
+    <label for="credits">Grades: </label><br>
+    <input required type="text" id="grades" placeholder="Enter grades separated by commas"><br><br>
+    <label for="scores">Units </label><br>
+    <input required type="text" id="units" placeholder="Enter units separated by commas"><br><br>
+    <p id="results"></p>
+    <button id="calculate" onclick="calculate()">Calculate GPA</button>
+<h2>Screening Calculator</h2>
+<details>
+    <summary>How to use</summary>
+    <p>Enter your JAMB score and O level score in the respective fields. The screening score is calculated as follows:</p>
+    <ul>
+        <li>Screening Score = [(JAMB Score / 400) * 60 + (sum of O Level Score / 30) * 40]</li>
+        <li>Where O Level Score is the average of your best 5 subjects.</li>
+        <li>Ensure that your JAMB score is out of 400 and O Level score is out of 30.</li>  
+    Note:your O'level grades are expected to be in the format,
+    <ul>
+        <li>A1=6</li>
+        <li>B2=5</li>
+        <li>B3=4</li>
+        <li>C4=3</li>
+        <li>C5=2</li>
+        <li>C6=1</li>
+    </ul>
+</details>
+<label for="screening">Jamb Score: </label><br>
+<input required type="text" id="screening" placeholder="Enter Jamb score"><br><br>   
+<label for="level">O level: </label><br>
+<input required type="text" id="level" placeholder="Enter O level score separated by comma"><br><br>
+<p id="screeningResult"></p>
+<button id="screeningButton" onclick="calculateScreening()">Calculate Screening Score</button>
+</div>    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
