@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gpa calculator</title>
-    <link rel="stylesheet" href="styles.css">
-     <link rel="manifest" href="manifest.json">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPA Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="image.png" type="images/x-icon">
 </head>
 <body>
-    <div class="container">
-        <div id="inner">
-        <h2>GPA Calculator</h2>
-        <details>
-            <summary>How to use</summary>
-            <p>Enter your scores in the format,
-                5,4,3,2,1,4,3,2,1
-                where each number corresponds to a grade as follows:
-                <ul>
-                    <li>A=5</li>
-                    <li>B=4</li>
-                    <li>C=3</li>
-                    <li>D=2</li>
-                    <li>E=1</li>
-                </ul>
-                and units in the respective fields.</p>
-        </details>
-    <label for="credits">Grades: </label><br>
-    <input required type="text" id="grades" placeholder="Enter grades separated by commas"><br><br>
-    <label for="scores">Units </label><br>
-    <input required type="text" id="units" placeholder="Enter units separated by commas"><br><br>
-    <p id="results"></p>
-    <button id="calculate" onclick="calculate()">Calculate GPA</button>
-<h2>Screening Calculator</h2>
-<details>
-    <summary>How to use</summary>
-    <p>Enter your JAMB score and O level score in the respective fields. The screening score is calculated as follows:</p>
-    <ul>
-        <li>Screening Score = [(JAMB Score / 400) * 60 + (sum of O Level Score / 30) * 40]</li>
-        <li>Where O Level Score is the average of your best 5 subjects.</li>
-        <li>Ensure that your JAMB score is out of 400 and O Level score is out of 30.</li>  
-    Note:your O'level grades are expected to be in the format,
-    <ul>
-        <li>A1=6</li>
-        <li>B2=5</li>
-        <li>B3=4</li>
-        <li>C4=3</li>
-        <li>C5=2</li>
-        <li>C6=1</li>
-    </ul>
-</details>
-<label for="screening">Jamb Score: </label><br>
-<input required type="text" id="screening" placeholder="Enter Jamb score"><br><br>   
-<label for="level">O level: </label><br>
-<input required type="text" id="level" placeholder="Enter O level score separated by comma"><br><br>
-<p id="screeningResult"></p>
-<button id="screeningButton" onclick="calculateScreening()">Calculate Screening Score</button>
-</div>    
+  <header>
+<div class="header">
+  <div class="left">
+    <img src="image.png" alt="logo">
+  </div>
+  <div class="right">
+    <h1>GPA Calculator</h1>
+    <p>Calculate your gpa score easily</p>
+  </div>
+  </div>
+  </header>
+  <div class="calculator">
+    <h2>GPA Calculator</h2>
+    <div id="form">
+    <form>
+      <label for="course">Course:</label>
+      <input type="text" id="course" placeholder="Enter course name">
+      <label for="grade">Grade:</label>
+      <select id="grade">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+      </select>
+      <label for="unit">Unit:</label>
+      <input type="number" id="unit" placeholder="Enter unit">
+      <button id="add">Add Course</button>
+    </form>
     </div>
-    <script src="script.js"></script>
+    <table id="courses">
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Grade</th>
+          <th>Unit</th>
+          <th>Grade Point</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="course-body">
+      </tbody>
+    </table>
+    <p id="gpa"></p>
+    <button id="calculate">Calculate GPA</button>
+  </div>
+<footer>
+  <div class="footer">
+    <h3>&copy; made by joseph 2025</h3>
+  </div>
+</footer>
+  <script src="script.js"></script>
 </body>
 </html>
